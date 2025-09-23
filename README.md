@@ -7,13 +7,13 @@ This repository contains Homebrew formulas for Base14 tools.
 First, add this tap to your Homebrew:
 
 ```bash
-brew tap base14/tap
+brew tap base-14/homebrew-tap
 ```
 
 Then you can install any formula from this tap:
 
 ```bash
-brew install base14/tap/clamreef-agent
+brew install base-14/homebrew-tap/clamreef-agent
 ```
 
 ## Available Formulas
@@ -24,10 +24,10 @@ A lightweight control plane agent for ClamAV antivirus monitoring and telemetry.
 
 ```bash
 # Install
-brew install base14/tap/clamreef-agent
+brew install base-14/homebrew-tap/clamreef-agent
 
 # Start as a service
-brew services start base14/tap/clamreef-agent
+brew services start base-14/homebrew-tap/clamreef-agent
 
 # Check status
 brew services list
@@ -54,7 +54,7 @@ To add a new formula to this tap:
 brew install --build-from-source ./Formula/clamreef-agent.rb
 
 # Or if you've already tapped
-brew reinstall --build-from-source base14/tap/clamreef-agent
+brew reinstall --build-from-source base-14/homebrew-tap/clamreef-agent
 ```
 
 ### Auditing formulas
