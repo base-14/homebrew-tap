@@ -6,7 +6,7 @@ class ClamreefAgent < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/base-14/clamreef-agent/releases/download/clamreef-agent-#{version}/clamreef-agent-Darwin-aarch64.tar.gz"
+      url "https://github.com/base-14/clamreef-agent/releases/download/clamreed-agent-#{version}/clamreef-agent-Darwin-aarch64.tar.gz"
       sha256 "d1e79bec3c863220f7bbdc48f568b091694e7771955996f3b2cbe1afba369c10"
     elsif Hardware::CPU.intel?
       url "https://github.com/base-14/clamreef-agent/releases/download/clamreef-agent-#{version}/clamreef-agent-Darwin-x86_64.tar.gz"
@@ -16,7 +16,7 @@ class ClamreefAgent < Formula
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/base-14/clamreef-agent/releases/download/clamreef-agent-#{version}/clamreef-agent-Linux-aarch64.tar.gz"
+      url "https://github.com/base-14/clamreef-agent/releases/download/clamreed-agent-#{version}/clamreef-agent-Linux-aarch64.tar.gz"
       sha256 "d69c191cb102adec63983a488dadf9bf325f7e7a7c3c06848a3c56e467954bc4"
     else
       url "https://github.com/base-14/clamreef-agent/releases/download/clamreef-agent-#{version}/clamreef-agent-Linux-x86_64.tar.gz"
