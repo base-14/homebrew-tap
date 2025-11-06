@@ -7,7 +7,7 @@ class ClamreefAgent < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/base-14/clamreef-agent/releases/download/clamreef-agent-#{version}/clamreef-agent-Darwin-aarch64.tar.gz"
-      sha256 "PLACEHOLDER_SHA256_ARM64"
+      sha256 "59f0aad985fe21ecc7b632e70f790e54fb9cefa2c473c682068f9477e1701d73"
     elsif Hardware::CPU.intel?
       url "https://github.com/base-14/clamreef-agent/releases/download/clamreef-agent-#{version}/clamreef-agent-Darwin-x86_64.tar.gz"
       sha256 "PLACEHOLDER_SHA256_INTEL"
