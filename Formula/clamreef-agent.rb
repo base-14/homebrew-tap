@@ -1,13 +1,13 @@
 class ClamreefAgent < Formula
   desc "Lightweight control plane agent for ClamAV antivirus monitoring and telemetry"
   homepage "https://github.com/base-14/clamreef-agent"
-  version "0.0.6"
+  version "0.1.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/base-14/clamreef-agent/releases/download/clamreef-agent-#{version}/clamreef-agent-Darwin-aarch64.tar.gz"
-      sha256 "59f0aad985fe21ecc7b632e70f790e54fb9cefa2c473c682068f9477e1701d73"
+      sha256 "d1e79bec3c863220f7bbdc48f568b091694e7771955996f3b2cbe1afba369c10"
     elsif Hardware::CPU.intel?
       url "https://github.com/base-14/clamreef-agent/releases/download/clamreef-agent-#{version}/clamreef-agent-Darwin-x86_64.tar.gz"
       sha256 "PLACEHOLDER_SHA256_INTEL"
@@ -17,7 +17,7 @@ class ClamreefAgent < Formula
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/base-14/clamreef-agent/releases/download/clamreef-agent-#{version}/clamreef-agent-Linux-aarch64.tar.gz"
-      sha256 "PLACEHOLDER_SHA256_LINUX_ARM64"
+      sha256 "d69c191cb102adec63983a488dadf9bf325f7e7a7c3c06848a3c56e467954bc4"
     else
       url "https://github.com/base-14/clamreef-agent/releases/download/clamreef-agent-#{version}/clamreef-agent-Linux-x86_64.tar.gz"
       sha256 "PLACEHOLDER_SHA256_LINUX_INTEL"
