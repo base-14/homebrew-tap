@@ -30,50 +30,53 @@ class ClamreefAgent < Formula
     bin.install "clamreef-agent"
 
     # Install sample configuration file
-    (buildpath/"config.yaml.example").write <<~EOS
+    (buildpath/"config.toml.example").write <<~EOS
       # ClamReef Agent Configuration
-      # Copy this file to #{etc}/clamreef/config.yaml and modify as needed
+      # Copy this file to #{etc}/clamreef/config.toml and modify as needed
 
       # ClamAV connection settings
-      clamav:
-        socket_type: unix
-        socket_path: /tmp/clamd.socket
-        timeout: 30
-        retry_attempts: 3
-        retry_delay: 5
+      [clamav]
+      socket_type = "unix"
+      socket_path = "/tmp/clamd.socket"
+      timeout = 30
+      retry_attempts = 3
+      retry_delay = 5
 
       # Telemetry settings
-      telemetry:
-        enabled: false  # Disabled by default for privacy
-        otlp_endpoint: "http://localhost:4317"
-        service_name: "clamreef-agent"
-        metrics_interval: 60
+      [telemetry]
+      enabled = false  # Disabled by default for privacy
+      otlp_endpoint = "http://localhost:4317"
+      service_name = "clamreef-agent"
+      metrics_interval = 60
 
       # Scanning settings
-      scanning:
-        watch_paths:
-          - /Users/*/Downloads
-          - /Users/*/Desktop
-        exclude_paths:
-          - /System
-          - /Library/Developer
-        max_file_size: 100
-        recursive: true
+      [scanning]
+      watch_paths = [
+        "/Users/*/Downloads",
+        "/Users/*/Desktop"
+      ]
+      exclude_paths = [
+        "/System",
+        "/Library/Developer"
+      ]
+      max_file_size = 100
+      recursive = true
 
       # Agent settings
-      agent:
-        log_level: info
-        health_check:
-          enabled: true
-          port: 8080
-          path: /health
+      [agent]
+      log_level = "info"
+
+      [agent.health_check]
+      enabled = true
+      port = 8080
+      path = "/health"
     EOS
 
-    (etc/"clamreef").install "config.yaml.example"
+    (etc/"clamreef").install "config.toml.example"
   end
 
   service do
-    run [opt_bin/"clamreef-agent", "--config", etc/"clamreef/config.yaml"]
+    run [opt_bin/"clamreef-agent", "--config", etc/"clamreef/config.toml"]
     keep_alive true
     log_path var/"log/clamreef-agent.log"
     error_log_path var/"log/clamreef-agent.error.log"
@@ -87,9 +90,9 @@ class ClamreefAgent < Formula
     (var/"run").mkpath
 
     # Copy example config if actual config doesn't exist
-    config_file = etc/"clamreef/config.yaml"
+    config_file = etc/"clamreef/config.toml"
     unless config_file.exist?
-      cp etc/"clamreef/config.yaml.example", config_file
+      cp etc/"clamreef/config.toml.example", config_file
       opoo "Created config file at #{config_file}"
       opoo "Please review and modify the configuration as needed."
     end
@@ -118,8 +121,8 @@ class ClamreefAgent < Formula
   def caveats
     <<~EOS
       Configuration:
-        Config file: #{etc}/clamreef/config.yaml
-        Example config: #{etc}/clamreef/config.yaml.example
+        Config file: #{etc}/clamreef/config.toml
+        Example config: #{etc}/clamreef/config.toml.example
 
       Edit the configuration file to customize:
         - ClamAV connection settings
