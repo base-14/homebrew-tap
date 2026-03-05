@@ -5,21 +5,21 @@
 class Cicada < Formula
   desc "TUI analytics dashboard for Claude Code sessions"
   homepage "https://github.com/base-14/cicada"
-  version "0.2.1"
+  version "0.2.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/base-14/cicada/releases/download/v0.2.1/cicada_0.2.1_darwin_amd64.tar.gz"
-      sha256 "eec99fd89b3c9f98e31c902691a93ab495462c1605a48add9fe5eb4c195156e3"
+      url "https://github.com/base-14/cicada/releases/download/v0.2.2/cicada_0.2.2_darwin_amd64.tar.gz"
+      sha256 "c860a2f8f70204ce8bbcf6137e815b80a35e36a1d62232ae87d96c69155133a3"
 
       define_method(:install) do
         bin.install "cicada"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/base-14/cicada/releases/download/v0.2.1/cicada_0.2.1_darwin_arm64.tar.gz"
-      sha256 "95567af009224a0340db4b03e8bf1119df30ed288a6b0b9585b163d58de2c51a"
+      url "https://github.com/base-14/cicada/releases/download/v0.2.2/cicada_0.2.2_darwin_arm64.tar.gz"
+      sha256 "52b3fd7bd369092ae7621f3380e111f852b1c1e1335642bb086a18af11875721"
 
       define_method(:install) do
         bin.install "cicada"
@@ -29,15 +29,15 @@ class Cicada < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/base-14/cicada/releases/download/v0.2.1/cicada_0.2.1_linux_amd64.tar.gz"
-      sha256 "d5c3ab3f580df57fbfe464a06704a2e16208f59c35887f3481be7f7d8e4e520c"
+      url "https://github.com/base-14/cicada/releases/download/v0.2.2/cicada_0.2.2_linux_amd64.tar.gz"
+      sha256 "ff09a7c6f89fd29cd312a34ebb7592819019e54f0772bac85390b5009bfd8c49"
       define_method(:install) do
         bin.install "cicada"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/base-14/cicada/releases/download/v0.2.1/cicada_0.2.1_linux_arm64.tar.gz"
-      sha256 "44e8405e02ab7ebfdd686cd3787fc8150e63960033d435307fdfd3210b411ca1"
+      url "https://github.com/base-14/cicada/releases/download/v0.2.2/cicada_0.2.2_linux_arm64.tar.gz"
+      sha256 "0ed6ae78fee8ec4026a0f851dfeea6c9c00d9554ed30c8dea911953717aa8e8e"
       define_method(:install) do
         bin.install "cicada"
       end
