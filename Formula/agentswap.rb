@@ -2,25 +2,25 @@ class Agentswap < Formula
   desc "Transfer conversation history between AI coding agents"
   homepage "https://github.com/nimishgj/agentswap"
   license "MIT"
-  version "0.1.0"
+  version "0.1.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/nimishgj/agentswap/releases/download/v0.1.0/agentswap-0.1.0-aarch64-apple-darwin.tar.gz"
-      sha256 "0693fcc9e84611fed7fae837fe4e9a4bd32a32cdc2191ec2402584e42a00d6f5"
+      url "https://github.com/nimishgj/agentswap/releases/download/v0.1.1/agentswap-0.1.1-aarch64-apple-darwin.tar.gz"
+      sha256 "899ecb2d77c5b29862aca43e6a9712c00b68547ed609b111c2ad1ea0176e687d"
     else
-      url "https://github.com/nimishgj/agentswap/releases/download/v0.1.0/agentswap-0.1.0-x86_64-apple-darwin.tar.gz"
-      sha256 "96b0e903125fa97b4d9effa63431f599c16ae733a101b2e785f9e2c120001dc0"
+      url "https://github.com/nimishgj/agentswap/releases/download/v0.1.1/agentswap-0.1.1-x86_64-apple-darwin.tar.gz"
+      sha256 "f05edeceaf19a4f4d77e9ef07781fdb571e42bddd705d93dc66f70341290203f"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/nimishgj/agentswap/releases/download/v0.1.0/agentswap-0.1.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "a17abb989e590757e5eca084119a3c5e1da0ba0c5662509977f9a28e90ec15b7"
+      url "https://github.com/nimishgj/agentswap/releases/download/v0.1.1/agentswap-0.1.1-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "df402fa083389934ef2facb1578b022660185824e0c090f42178b0f769e55b6b"
     else
-      url "https://github.com/nimishgj/agentswap/releases/download/v0.1.0/agentswap-0.1.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "2576e5b5471e3cf41859b7141b32c1994dd4205722c0388499004c0c6cb722a8"
+      url "https://github.com/nimishgj/agentswap/releases/download/v0.1.1/agentswap-0.1.1-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "5778e526cb557b1d0e381662f224d57df4665606a2dcf5682f8530366a7884e2"
     end
   end
 
