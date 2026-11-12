@@ -1,22 +1,22 @@
 class Scout < Formula
   desc "CLI for the Scout observability platform"
   homepage "https://github.com/base-14/scout-cli"
-  version "0.17.2"
+  version "0.18.0"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/base-14/public-apps/releases/download/scout-v#{version}/scout-#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "4bceca3694dd73ac7ec5cb0c95e47616f7025c373a3f8b6f05f812a57f193ae2"
+      sha256 "2c78df3348d7fec198d07d92f31eac1346b96f65f6f2089e5875397742111152"
     end
     if Hardware::CPU.intel?
       url "https://github.com/base-14/public-apps/releases/download/scout-v#{version}/scout-#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "8ec2bca19237c811d3b202c5094a650f13e0547e3ecc17d2f1e23caeec221988"
+      sha256 "c18cef81026daca9b4bc8af8a39933a0f48e63ebc0fed2efa8c53838a1679591"
     end
   end
 
   on_linux do
     url "https://github.com/base-14/public-apps/releases/download/scout-v#{version}/scout-#{version}-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "be92287d58fbd529c94dd882f0e2b737742b8001955d6f510c75b5a5c1159213"
+    sha256 "259c0f0d1d0832712b34a023b0150de7bc6436c55825323b572b1e13970a70ce"
   end
 
   def install
